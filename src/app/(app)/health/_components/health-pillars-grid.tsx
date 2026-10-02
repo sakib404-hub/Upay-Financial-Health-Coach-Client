@@ -1,6 +1,7 @@
 "use client";
 
 import { PiggyBank, ShoppingBag, Flag, Shield, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface PillarData {
   id: string;
@@ -79,16 +80,21 @@ const PILLARS: PillarData[] = [
 export function HealthPillarsGrid() {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {PILLARS.map((pillar) => {
+      {PILLARS.map((pillar, idx) => {
         const Icon = pillar.icon;
         // Mini gauge circumference for r=15: 2 * PI * 15 = 94.2
         const miniCircumference = 94.2;
         const miniDashoffset = miniCircumference - (pillar.score / 100) * miniCircumference;
 
         return (
-          <div
+          <motion.div
             key={pillar.id}
-            className="group relative rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 p-5 flex flex-col justify-between shadow-xs hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: idx * 0.08 }}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="group relative rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200"
           >
             <div>
               {/* Header: Pillar index & monthly delta */}
@@ -172,7 +178,7 @@ export function HealthPillarsGrid() {
             <p className="text-xs text-on-surface-variant pt-2.5 border-t border-outline-variant/30 leading-relaxed">
               {pillar.metricLabel}
             </p>
-          </div>
+          </motion.div>
         );
       })}
     </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
+import { GlassBackground } from "@/components/layout/glass-background";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
     "smart savings goals",
     "spending insights",
   ],
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans ambient-bg text-[#131b2e] selection:bg-[#adedd3] selection:text-[#306d58]">
+      <body className="min-h-full flex flex-col font-sans ambient-bg text-[#131b2e] selection:bg-[#adedd3] selection:text-[#306d58] relative">
+        <GlassBackground />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>

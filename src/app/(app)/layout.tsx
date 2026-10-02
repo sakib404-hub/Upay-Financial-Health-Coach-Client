@@ -10,7 +10,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [addTransactionOpen, setAddTransactionOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+    <div className="min-h-screen flex bg-transparent text-on-surface antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
       {/* Sidebar Navigation */}
       <AppSidebar
         mobileOpen={mobileSidebarOpen}

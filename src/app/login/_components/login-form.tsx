@@ -68,7 +68,12 @@ export function LoginForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="w-full max-w-md mx-auto space-y-6"
+    >
       {/* Brand & Title */}
       <div className="text-center space-y-2">
         <Link href="/" className="inline-flex items-center gap-2.5 group">
@@ -119,7 +124,7 @@ export function LoginForm() {
       </motion.div>
 
       {/* Main Glass Form Card */}
-      <div className="glass-card-elevated rounded-3xl p-6 sm:p-8 space-y-5 border border-outline-variant/40 shadow-xl">
+      <div className="glass-card-elevated rounded-3xl p-6 sm:p-8 space-y-5 border border-white/85 shadow-glass-card">
         {/* Auth Mode Toggle Tabs (Email vs Phone) */}
         <div className="grid grid-cols-2 gap-2 p-1 rounded-xl bg-surface-container-low border border-outline-variant/30 text-xs font-semibold">
           <button
@@ -292,6 +297,6 @@ export function LoginForm() {
           ← Back to Homepage
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

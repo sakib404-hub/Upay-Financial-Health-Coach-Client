@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Filter, Download, ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function RecentTransactions() {
   const [downloadSuccess, setDownloadSuccess] = useState(false);
@@ -101,7 +102,13 @@ export function RecentTransactions() {
   };
 
   return (
-    <div className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between"
+    >
       <div>
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -195,6 +202,6 @@ export function RecentTransactions() {
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

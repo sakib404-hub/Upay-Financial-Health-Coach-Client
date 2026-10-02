@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export function CashflowAnalytics() {
   const [activeTimeframe, setActiveTimeframe] = useState<"7D" | "30D" | "3M" | "6M" | "1Y">("30D");
@@ -19,7 +20,13 @@ export function CashflowAnalytics() {
   const currentHover = hoveredPoint !== null ? dataPoints[hoveredPoint] : dataPoints[4];
 
   return (
-    <div className="lg:col-span-2 glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="lg:col-span-2 glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between"
+    >
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div>
@@ -221,6 +228,6 @@ export function CashflowAnalytics() {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

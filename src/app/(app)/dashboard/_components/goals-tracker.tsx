@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Plus, ShieldCheck, Laptop, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function GoalsTracker() {
   const [activeFeedback, setActiveFeedback] = useState<string | null>(null);
@@ -51,7 +52,13 @@ export function GoalsTracker() {
   };
 
   return (
-    <div className="glass-card rounded-2xl p-5 sm:p-6">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="glass-card rounded-2xl p-5 sm:p-6"
+    >
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-base font-bold text-on-surface">Your Goals</h3>
@@ -140,6 +147,6 @@ export function GoalsTracker() {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }

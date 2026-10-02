@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AlertTriangle, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function SpendingBreakdown() {
   const categories = [
@@ -12,7 +13,13 @@ export function SpendingBreakdown() {
   ];
 
   return (
-    <div className="glass-card rounded-2xl p-5 sm:p-6">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="glass-card rounded-2xl p-5 sm:p-6"
+    >
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-base font-bold text-on-surface">Spending Breakdown</h3>
@@ -123,6 +130,6 @@ export function SpendingBreakdown() {
           <ArrowRight className="w-3 h-3" />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

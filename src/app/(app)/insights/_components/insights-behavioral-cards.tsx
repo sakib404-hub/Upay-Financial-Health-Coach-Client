@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Clock, Repeat, AlertTriangle, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function InsightsBehavioralCards() {
   return (
@@ -16,7 +17,14 @@ export function InsightsBehavioralCards() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* Behavioral Card 1: Dining Pattern */}
-        <div className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-amber-500 p-5 shadow-xs hover:-translate-y-0.5 hover:shadow-md transition-all flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-amber-500 p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+        >
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-bold text-amber-700 uppercase tracking-wide flex items-center gap-1.5">
@@ -50,10 +58,17 @@ export function InsightsBehavioralCards() {
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Behavioral Card 2: Recurring Expenses */}
-        <div className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-blue-500 p-5 shadow-xs hover:-translate-y-0.5 hover:shadow-md transition-all flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-blue-500 p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+        >
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-wide flex items-center gap-1.5">
@@ -87,10 +102,17 @@ export function InsightsBehavioralCards() {
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Behavioral Card 3: Spending Change Surge */}
-        <div className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-rose-500 p-5 shadow-xs hover:-translate-y-0.5 hover:shadow-md transition-all flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/80 border-l-4 border-l-rose-500 p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+        >
           <div>
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-bold text-rose-700 uppercase tracking-wide flex items-center gap-1.5">
@@ -124,7 +146,7 @@ export function InsightsBehavioralCards() {
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

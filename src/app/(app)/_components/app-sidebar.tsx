@@ -15,6 +15,7 @@ import {
   Bot,
   User,
   Settings,
+  ShieldCheck,
   LogOut,
   X,
 } from "lucide-react";
@@ -107,6 +108,12 @@ export function AppSidebar({ mobileOpen, onMobileClose }: AppSidebarProps) {
       href: "/profile#preferences",
       icon: Settings,
       isActive: false,
+    },
+    {
+      label: "Admin Center",
+      href: "/admin",
+      icon: ShieldCheck,
+      isActive: pathname.startsWith("/admin"),
     },
   ];
 

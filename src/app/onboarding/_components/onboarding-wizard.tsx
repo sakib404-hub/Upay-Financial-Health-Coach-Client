@@ -126,7 +126,7 @@ export function OnboardingWizard() {
 
       {/* STEP 1: PRIMARY FOCUS */}
       {step === 1 && (
-        <div className="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-6 border border-white/85 shadow-glass-card">
           <div className="space-y-2">
             <span className="text-xs font-bold text-primary uppercase tracking-wider">
               Personalized Orientation
@@ -207,7 +207,7 @@ export function OnboardingWizard() {
 
       {/* STEP 2: INCOME PROFILE */}
       {step === 2 && (
-        <div className="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-6 border border-white/85 shadow-glass-card">
           <div className="space-y-2">
             <span className="text-xs font-bold text-primary uppercase tracking-wider">
               Financial Baseline
@@ -336,7 +336,7 @@ export function OnboardingWizard() {
 
       {/* STEP 3: ESSENTIAL COMMITMENTS */}
       {step === 3 && (
-        <div className="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-6 border border-white/85 shadow-glass-card">
           <div className="space-y-2">
             <span className="text-xs font-bold text-primary uppercase tracking-wider">
               Fixed Outflows
@@ -451,7 +451,7 @@ export function OnboardingWizard() {
 
       {/* STEP 4: FIRST GOAL */}
       {step === 4 && (
-        <div className="glass-card rounded-3xl p-6 sm:p-10 space-y-6">
+        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-6 border border-white/85 shadow-glass-card">
           <div className="space-y-2">
             <span className="text-xs font-bold text-primary uppercase tracking-wider">
               Target Blueprint
@@ -570,7 +570,7 @@ export function OnboardingWizard() {
 
       {/* STEP 5: COMPLETED PLAN & AI SUMMARY */}
       {step === 5 && (
-        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-8 border border-primary/30">
+        <div className="glass-card-elevated rounded-3xl p-6 sm:p-10 space-y-8 border border-white/85 shadow-glass-card">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">
               <Sparkles className="w-3.5 h-3.5 text-primary" />

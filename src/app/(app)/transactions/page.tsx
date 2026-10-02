@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { MessageSquare, PlusCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import { TransactionSummaryCards } from "./_components/transaction-summary-cards";
 import { TransactionFilterToolbar } from "./_components/transaction-filter-toolbar";
 import { TransactionTable } from "./_components/transaction-table";
@@ -259,7 +260,12 @@ export default function TransactionsPage() {
   return (
     <div className="space-y-6 sm:space-y-7">
       {/* Page Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <motion.div
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      >
         <div>
           <h1 className="text-2xl font-extrabold text-on-surface tracking-tight">
             Transactions
@@ -293,7 +299,7 @@ export default function TransactionsPage() {
             <span>Add Transaction</span>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* 1. Top Summary KPI Cards */}
       <TransactionSummaryCards
@@ -303,40 +309,52 @@ export default function TransactionsPage() {
       />
 
       {/* 2. Comprehensive Filter Toolbar */}
-      <TransactionFilterToolbar
-        searchQuery={searchQuery}
-        onSearchChange={(q) => {
-          setSearchQuery(q);
-          setCurrentPage(1);
-        }}
-        selectedCategory={selectedCategory}
-        onCategoryChange={(cat) => {
-          setSelectedCategory(cat);
-          setCurrentPage(1);
-        }}
-        selectedType={selectedType}
-        onTypeChange={(t) => {
-          setSelectedType(t);
-          setCurrentPage(1);
-        }}
-        selectedSort={selectedSort}
-        onSortChange={(s) => {
-          setSelectedSort(s);
-          setCurrentPage(1);
-        }}
-        onResetFilters={handleResetFilters}
-        transactionsToExport={filteredTransactions}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, delay: 0.1 }}
+      >
+        <TransactionFilterToolbar
+          searchQuery={searchQuery}
+          onSearchChange={(q) => {
+            setSearchQuery(q);
+            setCurrentPage(1);
+          }}
+          selectedCategory={selectedCategory}
+          onCategoryChange={(cat) => {
+            setSelectedCategory(cat);
+            setCurrentPage(1);
+          }}
+          selectedType={selectedType}
+          onTypeChange={(t) => {
+            setSelectedType(t);
+            setCurrentPage(1);
+          }}
+          selectedSort={selectedSort}
+          onSortChange={(s) => {
+            setSelectedSort(s);
+            setCurrentPage(1);
+          }}
+          onResetFilters={handleResetFilters}
+          transactionsToExport={filteredTransactions}
+        />
+      </motion.div>
 
       {/* 3. Main Transactions Ledger Table */}
-      <TransactionTable
-        transactions={paginatedTransactions}
-        onSelectTransaction={(tx) => setSelectedTransaction(tx)}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(p) => setCurrentPage(p)}
-        totalCount={filteredTransactions.length}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+      >
+        <TransactionTable
+          transactions={paginatedTransactions}
+          onSelectTransaction={(tx) => setSelectedTransaction(tx)}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(p) => setCurrentPage(p)}
+          totalCount={filteredTransactions.length}
+        />
+      </motion.div>
 
       {/* 4. Slide-Over Detail Drawer */}
       <TransactionDetailDrawer

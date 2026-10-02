@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   Check,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function RegisterForm() {
   const router = useRouter();
@@ -80,7 +81,12 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="w-full max-w-md mx-auto space-y-6"
+    >
       {/* Brand & Title */}
       <div className="text-center space-y-2">
         <Link href="/" className="inline-flex items-center gap-2.5 group">
@@ -107,7 +113,7 @@ export function RegisterForm() {
       </div>
 
       {/* Main Glass Form Card */}
-      <div className="glass-card-elevated rounded-3xl p-6 sm:p-8 space-y-5 border border-outline-variant/40 shadow-xl">
+      <div className="glass-card-elevated rounded-3xl p-6 sm:p-8 space-y-5 border border-white/85 shadow-glass-card">
         {error && (
           <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium">
             {error}
@@ -296,6 +302,6 @@ export function RegisterForm() {
           ← Back to Homepage
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
