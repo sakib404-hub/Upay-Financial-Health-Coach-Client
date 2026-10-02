@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upay Financial Coach
 
-## Getting Started
+Upay is a financial-coaching web app concept for people managing money in Bangladesh. The current project delivers the public-facing product site and an interactive financial assessment prototype, with example figures shown in Bangladeshi taka (BDT).
 
-First, run the development server:
+## Implemented So Far
+
+- **Home page (`/`)**: responsive product landing page with a hero, trust indicators, problem framing, core product pillars, AI-coaching showcase, workflow overview, feature grid, security messaging, and calls to action.
+- **About page (`/about`)**: product overview, explanation of how the concept works, FAQs, and a call to action.
+- **Onboarding (`/onboarding`)**: five-step assessment for a user's primary goal, income, essential commitments, and savings target. It calculates an example financial-health score, estimated surplus, suggested savings, and goal timeline from values held in the browser during the session.
+- **Shared interface**: reusable navigation, footer, animated text/components, responsive layouts, and motion-enhanced interactions.
+
+## Current Scope
+
+This is a frontend prototype. The assessment calculations run in the client and are not saved to a profile or database. Authentication, persistent storage, live bank or mobile-wallet connections, and a production AI coaching service are not implemented yet. Security and AI claims in the interface describe the product concept, not verified production integrations.
+
+## Technology
+
+- Next.js `16.3.8` App Router and React `19`
+- TypeScript
+- Tailwind CSS `4`
+- Framer Motion for UI animation
+- Lucide React icons
+- Lenis dependency for smooth scrolling
+
+Routes are under `src/app`. The home page's sections live in `src/app/_components`; route-specific onboarding and about components are colocated with their pages. Shared navigation, footer, and animation components live in `src/components`.
+
+## Run Locally
+
+Requirements: Node.js and npm.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Sakib404-hub](https://github.com/sakib404-hub)
