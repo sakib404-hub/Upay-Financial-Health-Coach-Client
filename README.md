@@ -1,47 +1,124 @@
-# Upay Financial Coach
+<div align="center">
+  <h1>🌱 Upay Financial Coach</h1>
+  <p><strong>A modern financial-coaching web app concept designed for managing money in Bangladesh.</strong></p>
 
-Upay is a financial-coaching web app concept for people managing money in Bangladesh. The current project delivers the public-facing product site and an interactive financial assessment prototype, with example figures shown in Bangladeshi taka (BDT).
+  <!-- Badges -->
+  <img src="https://img.shields.io/badge/Next.js-16.3.8-black?style=flat-square&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-black?style=flat-square&logo=framer" alt="Framer Motion" />
+</div>
 
-## Implemented So Far
+<br />
 
-- **Home page (`/`)**: responsive product landing page with a hero, trust indicators, problem framing, core product pillars, AI-coaching showcase, workflow overview, feature grid, security messaging, and calls to action.
-- **About page (`/about`)**: product overview, explanation of how the concept works, FAQs, and a call to action.
-- **Onboarding (`/onboarding`)**: five-step assessment for a user's primary goal, income, essential commitments, and savings target. It calculates an example financial-health score, estimated surplus, suggested savings, and goal timeline from values held in the browser during the session.
-- **Shared interface**: reusable navigation, footer, animated text/components, responsive layouts, and motion-enhanced interactions.
+Upay is a conceptual financial coaching platform tailored for the Bangladeshi market. It features a public-facing product site and an interactive financial assessment prototype, calculating financial health scores, estimated surpluses, and savings timelines using Bangladeshi Taka (BDT).
 
-## Current Scope
+---
 
-This is a frontend prototype. The assessment calculations run in the client and are not saved to a profile or database. Authentication, persistent storage, live bank or mobile-wallet connections, and a production AI coaching service are not implemented yet. Security and AI claims in the interface describe the product concept, not verified production integrations.
+## ✨ Features Implemented
 
-## Technology
+*   **🏠 Home Page (`/`)**: A responsive, motion-enhanced product landing page featuring:
+    *   Hero section & Trust indicators
+    *   Problem framing & Core product pillars
+    *   AI-coaching showcase & Workflow overview
+    *   Feature grid, security messaging, and clear CTAs
+*   **📖 About Page (`/about`)**: Comprehensive product overview, operational concepts, FAQs, and engagement CTAs.
+*   **🎯 Onboarding Assessment (`/onboarding`)**: A dynamic 5-step financial assessment capturing:
+    *   Primary goals & Income
+    *   Essential commitments & Savings targets
+    *   *Real-time calculations:* Financial-health score, estimated surplus, suggested savings, and goal timeline (data held in browser session).
+*   **🎨 Shared UI/UX**: Reusable navigation, footer, responsive layouts, smooth scrolling, and Framer Motion-enhanced interactive components.
 
-- Next.js `16.3.8` App Router and React `19`
-- TypeScript
-- Tailwind CSS `4`
-- Framer Motion for UI animation
-- Lucide React icons
-- Lenis dependency for smooth scrolling
+## ⚠️ Current Scope & Limitations
 
-Routes are under `src/app`. The home page's sections live in `src/app/_components`; route-specific onboarding and about components are colocated with their pages. Shared navigation, footer, and animation components live in `src/components`.
+> **Note:** This project is currently a **Frontend Prototype**.
 
-## Run Locally
+*   **Client-Side Only**: Assessment calculations run directly in the browser.
+*   **No Persistence**: User profiles, databases, and authentication are not yet implemented.
+*   **No Live Integrations**: Live bank/mobile-wallet connections and production AI coaching services are conceptual claims presented in the UI, not verified production integrations.
 
-Requirements: Node.js and npm.
+## 🛠️ Technology Stack
 
-```bash
+| Technology | Version | Purpose |
+| :--- | :--- | :--- |
+| **Next.js** | `16.3.8` | React framework (App Router) |
+| **React** | `19` | UI Library |
+| **TypeScript** | Latest | Static typing for robust code |
+| **Tailwind CSS** | `4` | Utility-first styling |
+| **Framer Motion** | Latest | UI animations and page transitions |
+| **Lucide React** | Latest | Iconography |
+| **Lenis** | Latest | Smooth scrolling dependency |
+
+## 📂 Project Structure
+
+```text
+upay-financial-coach/
+├── public/                 # Static assets (images, fonts)
+├── src/                    # Source code
+│   ├── app/                # Next.js App Router (pages & colocated components)
+│   │   └── _components/    # Home page specific sections
+│   └── components/         # Shared UI (Nav, Footer, Animations)
+├── .gitignore
+├── AGENTS.md               # AI Agent instructions/guidelines
+├── CLAUDE.md               # Claude-specific context
+├── GEMINI.md               # Gemini-specific context
+├── eslint.config.mjs       # ESLint configuration
+├── next.config.ts          # Next.js configuration
+├── package.json            # Project metadata & scripts
+├── postcss.config.mjs      # PostCSS configuration
+└── README.md
+```
+🚀 Getting Started
+Prerequisites
+Ensure you have Node.js and npm installed on your machine.
+
+Run Locally
+Clone the repository and navigate into the project directory.
+
+Install dependencies using a clean install:
+
+Bash
 npm ci
+Start the development server:
+
+Bash
 npm run dev
-```
+Open http://localhost:3000 in your browser to view the application.
 
-Open [http://localhost:3000](http://localhost:3000).
+🧪 Project Checks
+Ensure code quality and test the production build before committing:
 
-## Project Checks
-
-```bash
+Bash
+# Run ESLint to check for code issues
 npm run lint
+
+# Create a production build
 npm run build
-```
 
-## Author
+## 👨‍💻 Meet the Author
 
-[Sakib404-hub](https://github.com/sakib404-hub)
+<div align="center">
+  <a href="https://github.com/sakib404-hub">
+  </a>
+  
+  <h3><b>Md. Sakib Hossen</b></h3>
+  <p><i>Full-Stack Web Developer | B.Sc. CSE Student @ Daffodil International University</i></p>
+
+  <p>
+    Specializing in modern web architectures and crafting scalable, user-centric applications.
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js" alt="Next.js" />
+    <img src="https://img.shields.io/badge/React-blue?style=flat-square&logo=react" alt="React" />
+    <img src="https://img.shields.io/badge/Express.js-black?style=flat-square&logo=express" alt="Express.js" />
+    <img src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
+  </p>
+
+  <br />
+
+  <a href="https://github.com/sakib404-hub">
+    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
+  </a>
+</div>
