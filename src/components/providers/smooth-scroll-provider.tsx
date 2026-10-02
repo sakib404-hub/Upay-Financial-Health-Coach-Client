@@ -3,7 +3,7 @@
 import { useEffect, useState, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { ReactLenis, useLenis } from "lenis/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
 interface SmoothScrollProviderProps {
@@ -125,19 +125,7 @@ function ScrollController() {
 }
 
 export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handler = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
+  const prefersReducedMotion = useReducedMotion();
 
   // If user prefers reduced motion, disable inertial scrolling for accessibility
   if (prefersReducedMotion) {

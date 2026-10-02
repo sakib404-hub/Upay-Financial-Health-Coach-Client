@@ -705,7 +705,7 @@ export function OnboardingWizard() {
           {/* Action CTAs */}
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/"
+              href="/dashboard"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-container text-on-primary text-sm font-semibold primary-btn-bevel shadow-lg active:scale-95 transition-all text-center"
             >
               <span>Explore Dashboard Experience</span>

@@ -69,13 +69,13 @@ export function Navbar() {
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             <Link
-              href="/onboarding"
-              className="text-sm font-medium text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg hover:bg-surface-container-high/40 transition-colors"
+              href="/login"
+              className="text-sm font-semibold text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg hover:bg-surface-container-high/40 transition-colors"
             >
               Sign In
             </Link>
             <Link
-              href="/onboarding"
+              href="/register"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-container text-on-primary text-sm font-semibold primary-btn-bevel transition-all duration-150 active:scale-95 shadow-sm"
             >
               <span>Start Coaching</span>
@@ -142,12 +142,28 @@ export function Navbar() {
               </Link>
             </nav>
             <div className="pt-2 border-t border-outline-variant/30 flex flex-col gap-2">
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-center py-2.5 rounded-xl border border-outline-variant/50 text-on-surface font-semibold text-xs hover:bg-surface-container transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/dashboard"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-center py-2.5 rounded-xl bg-secondary-container/60 border border-primary/20 text-primary font-bold text-xs hover:bg-secondary-container transition-colors"
+                >
+                  Dashboard
+                </Link>
+              </div>
               <Link
-                href="/onboarding"
+                href="/register"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center py-2.5 rounded-full bg-primary text-on-primary text-sm font-semibold primary-btn-bevel shadow-sm"
               >
-                Start Coaching (Free Assessment)
+                Create Account (Free Assessment)
               </Link>
             </div>
           </div>
